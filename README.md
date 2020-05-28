@@ -5,7 +5,7 @@ A minimalistic node.js-based CLI to quickly restore+start and snapshot+stop+dest
 
 ## Story
 
-*tl;dr: A stopped digital ocean droplet still costs money. I wanted a quick and easy way to automatically snapshot+stop+destroy my droplet and restore+start it whenever I want, so I don't have to pay for it when I don't need it (except a tiny fee for the snapshot)*
+*tl;dr: A stopped digital ocean droplet still costs money. I rarely use mine, so I wanted a quick and easy way to automatically snapshot+stop+destroy my droplet and restore+start it whenever needed. This way I don't have to pay for it when I don't need it (except a tiny fee for the snapshot)*
 
 It all started with Minecraft.. My friends and I loved playing together, so we needed a server. As a student I got a 50 bucks voucher for Digital Ocean (props to Github Student Developer Pack), so the decision was made 😁
 
