@@ -25,10 +25,11 @@ node index.js
 `
 
 ## Recommendation
-Add an alias to your *.bash_profile* file or similar, e.g. by entering the code below in your terminal
+Add an alias to your *.bash_profile* file or similar, so you can simply type `dcli` to run
 
 `
 echo "alias dcli='node /path/to/the/cli/index.js'" >> ~/.bash_profile    
 `
 
-This way you can run the cli by simply typing `dcli` in your terminal
+## Disclaimer
+This is not an official digital ocean product, so use this tool at your own risk
