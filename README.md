@@ -1,5 +1,5 @@
 # droplet-cli
-A minimalistic CLI to quickly restore+start and snapshot+stop+destroy digital ocean droplets so you only pay for them when you actually use them.
+A minimalistic node.js-based CLI to quickly restore+start and snapshot+stop+destroy digital ocean droplets so you only pay for them when you actually use them.
 
 <img src="https://i.imgur.com/gVN0aXx.png" alt="screenshot of the droplet-cli" width="500px"/>
 
@@ -23,6 +23,17 @@ npm install
 `
 node index.js
 `
+
+## Usage
+1. Upon first start, you'll be asked for your **personal access token**, which allows the cli to access your droplets. You can generate a new token in the digital ocean control panel by clicking on **api** in the left sidebar. After you entered it, it gets stored in ~/.dropletcli.
+1. First of all, the cli scans if there's any droplet running. You then get presented 4 options:
+    * Recreate Server
+    * Destroy Server
+    * Reboot Server
+    * Exit
+1.
+    1. If there's no droplet running, you can choose **Recreate Server** and **Exit**. The first option will scan your snapshots, restore the latest one into a droplet and start that droplet.
+    1. If a droplet is running, you can choose **Destroy Server**, **Reboot Server** and **Exit**. The first option will stop your droplet, then create a snapshot from it and upon success destroy the droplet.
 
 ## Recommendation
 Add an alias to your *.bash_profile* file or similar, so you can simply type `dcli` to run
