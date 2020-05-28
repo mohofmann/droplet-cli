@@ -245,12 +245,6 @@ const promptToken = async () => {
   return response.token;
 };
 
-// const setup = async () => {
-//   let token = getToken()
-//   if (!token) token = await promptToken();
-//   let data = await getDropletInfo();
-// }
-
 (async () => {
 	console.log(color.yellow().bold("\nDroplet Command Line Interface 1.2"))
   console.log(color.gray().dim("© 2019, Moritz Hofmann\n"))
@@ -263,24 +257,6 @@ const promptToken = async () => {
     info = await getDropletInfo();
   }
   let data = info.droplets[0];
-
-  // retrieveConfig()
-  // const config = retrieveConfig()
-  // if (!config) {
-  //   console.log("Please enter your Personal access token to establish a connection")
-  //   console.log("For security reasons we recommend to create a token exclusively for the CLI")
-  //   console.log("Create a token in the Digital Ocean web interface by clicking 'API' in the sidebar")
-  //   console.log("")
-  //   const response = await prompts({
-  //     type: 'text',
-  //     name: 'token',
-  //     message: 'Personal Access Token'
-  //   });
-  //   token = response.token
-  //   console.log(token)
-  // }
-  // return
-	// let data = await getDropletInfo()
 	if (data) {
 		dropletId = data.id
 		console.log(color.bold().yellow("! ") + "Droplet is currently " + data.status)
