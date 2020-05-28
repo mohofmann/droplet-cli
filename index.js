@@ -34,7 +34,8 @@ const getDropletInfo = async function () {
   			})
   			res.on('end', async () => {
   				let data = JSON.parse(Buffer.concat(dataChunks))
-          resolve(data)
+          if (data.id && data.id === 'Unauthorized') resolve(null)
+          else resolve(data.droplets[0])
   			})
   		}
   	)
@@ -250,13 +251,12 @@ const promptToken = async () => {
   console.log(color.gray().dim("© 2019, Moritz Hofmann\n"))
 
   token = await getToken();
-  let info = await getDropletInfo();
-  while (info.id && info.id === 'Unauthorized') {
+  let data = await getDropletInfo();
+  while (data === null) {
     console.log("The current Personal Access Token is invalid")
     token = await promptToken();
-    info = await getDropletInfo();
+    data = await getDropletInfo();
   }
-  let data = info.droplets[0];
 	if (data) {
 		dropletId = data.id
 		console.log(color.bold().yellow("! ") + "Droplet is currently " + data.status)
